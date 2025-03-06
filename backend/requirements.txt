@@ -1,0 +1,5 @@
+fastapi
+uvicorn
+SQLAlchem
+email-validator
+psycopg2-binary

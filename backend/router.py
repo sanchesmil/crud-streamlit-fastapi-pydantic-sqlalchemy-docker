@@ -33,7 +33,7 @@ def read_one_product(product_id: int, db: Session=Depends(get_db)):
 
 ### Rota que insere um novo produto
 @router.post("/products/", response_model=ProductResponse)
-def create_one_product(product=ProductCreate,db: Session = Depends(get_db)):
+def create_one_product(product:ProductCreate,db: Session = Depends(get_db)):
     product = create_product(product=product, db=db)
     return product
 
@@ -48,7 +48,10 @@ def delete_one_product(product_id: int, db: Session=Depends(get_db)):
 ### Rota que atualiza um produto
 @router.put("/products/{product_id}/", response_model=ProductResponse)
 def update_one_product(product_id:int, product: ProductUpdate, db: Session=Depends(get_db)):
-    product = update_product(product_id, product, db)
+
+    product = update_product(product=product, product_id=product_id, db=db)
+
     if product is None:
-        raise HTTPException(status_error=404, detail="Produto não encontrado.")
+        raise HTTPException(status_code=404, detail= 'Produto não encontrado.')
+   
     return product

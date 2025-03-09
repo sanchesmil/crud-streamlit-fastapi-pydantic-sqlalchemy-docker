@@ -1,5 +1,5 @@
-from pydantic import BaseModel, PositiveFloat, PositiveInt, EmailStr, vali
-import datetime
+from pydantic import BaseModel, PositiveFloat, PositiveInt, EmailStr
+from datetime import datetime
 from typing import Optional
 
 # O SCHEMA define as validações quando interajo com o usuário

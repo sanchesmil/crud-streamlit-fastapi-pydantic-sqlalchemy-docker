@@ -72,3 +72,4 @@ def delete_product(product_id: int, db: Session):
     db.delete(db_product)
     db.commit()
     return db_product
+    

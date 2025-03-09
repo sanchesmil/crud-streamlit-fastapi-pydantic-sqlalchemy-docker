@@ -1,5 +1,5 @@
 fastapi
 uvicorn
-SQLAlchem
+SQLAlchemy
 email-validator
 psycopg2-binary
